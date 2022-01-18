@@ -7,7 +7,7 @@
        - run:
            name: Deploy Over SSH
            command: |
-             ssh $SSH_USER@$SSH_HOST "touch t.txt; echo "All Good" > /var/www/html/index.html"
+             ssh -o IdentitiesOnly=yes $SSH_USER@$SSH_HOST "touch t.txt; echo "All Good" > /var/www/html/index.html"
              echo All Good
 
  workflows:
