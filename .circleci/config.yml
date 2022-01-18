@@ -1,6 +1,7 @@
  version: 2
  jobs:
    deploy:
+     context: ssh
      machine:
        enabled: true
      steps:
@@ -9,6 +10,7 @@
            command: |
              echo -e "kk\ntest"
              curl 3.123.35.13
+             echo $SSH_USER
              ssh ubuntu@3.123.35.13 "touch t.text"
 #ssh $SSH_USER@$SSH_HOST "touch t.text"
 
