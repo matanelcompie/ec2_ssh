@@ -7,7 +7,8 @@
        - run:
            name: Deploy Over SSH
            command: |
-             ping $SSH_HOST
+             echo -e "kk\ntest"
+             echo $SSH_HOST
              ssh $SSH_USER@$SSH_HOST "touch t.text"
 
  workflows:
