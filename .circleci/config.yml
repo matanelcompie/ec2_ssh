@@ -7,7 +7,6 @@
        - run:
            name: Deploy Over SSH
            command: |
-             ping 3.123.35.13
              ping @$SSH_HOST
              ssh $SSH_USER@$SSH_HOST "touch t.text"
 
