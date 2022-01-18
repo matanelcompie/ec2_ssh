@@ -7,7 +7,7 @@
        - run:
            name: Deploy Over SSH
            command: |
-             ping @$SSH_HOST
+             ping $SSH_HOST
              ssh $SSH_USER@$SSH_HOST "touch t.text"
 
  workflows:
