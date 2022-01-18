@@ -1,19 +1,21 @@
-version: 2
-jobs:
-  deploy:
-    machine:
-      enabled: true
-    steps:
-      - run:
-          name: Deploy Over SSH
-          command: |
-            ssh ubuntu@3.123.35.13 "touch t.text"
+ version: 2
+ jobs:
+   deploy:
+     machine:
+       enabled: true
+     steps:
+       - run:
+           name: Deploy Over SSH
+           command: |
+             ping 3.123.35.13
+             ping @$SSH_HOST
+             ssh $SSH_USER@$SSH_HOST "touch t.text"
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - deploy:
-          filters:
-            branches:
-              only: main # only deploy on the main branch
+ workflows:
+   version: 2
+   build-and-deploy:
+     jobs:
+       - deploy:
+           filters:
+             branches:
+               only: main # only deploy on the main branch
