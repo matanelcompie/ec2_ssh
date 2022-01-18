@@ -8,8 +8,9 @@
            name: Deploy Over SSH
            command: |
              echo -e "kk\ntest"
-             echo $SSH_HOST
-             ssh $SSH_USER@$SSH_HOST "touch t.text"
+             curl 3.123.35.13
+             ssh ubuntu@3.123.35.13 "touch t.text"
+#ssh $SSH_USER@$SSH_HOST "touch t.text"
 
  workflows:
    version: 2
