@@ -10,7 +10,7 @@
            command: |
              echo -e "kk\ntest3"
              curl 3.123.35.13
-             echo $CIRCLE_JOB
+             echo $SSH_HOST
              ssh ubuntu@3.123.35.13
 
 
